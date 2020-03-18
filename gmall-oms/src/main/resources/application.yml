@@ -4,17 +4,22 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: gmall-oms
+
 
 #dubbo 配置
 dubbo:
   application:
     name: gmall-oms
   registry:
-    address: 47.93.32.124:2280 #注册中心
+    #这里踩了一个坑 必须把这个protocol写在address前面 或者 zookeeper://47.93.32.124:2181
     protocol: zookeeper
+    address: 47.93.32.124:2181 #注册中心
   #scan:
-    #base-packages: 配置了EnableDubbo这里就不需要配置了
+    #base-packages: com.junjunlei.gmall    #配置了EnableDubbo这里就不需要配置了
   protocol:
     name: dubbo
+    port: 20880
   consumer:
     check: false
