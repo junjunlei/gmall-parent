@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+#dubbo 配置
+dubbo:
+  application:
+    name: gmall-admin-web
+  registry:
+    protocol: zookeeper
+    address: 47.93.32.124:2181
+  consumer:
+    check: false
+    timeout: 60000
+
+#jwt
+gmall:
+   jwt:
+     tokenHeader: Authorization
+     secret: leijunjun_2019
+     expiration: 604800
+     tokenHead: Bearer
