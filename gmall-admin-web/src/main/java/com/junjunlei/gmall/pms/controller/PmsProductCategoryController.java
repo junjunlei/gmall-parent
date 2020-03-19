@@ -2,9 +2,9 @@ package com.junjunlei.gmall.pms.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.junjunlei.gmall.pms.service.ProductCategoryService;
+import com.junjunlei.gmall.pms.vo.ProductCategoryWithChildrenVO;
 import com.junjunlei.gmall.utils.CommonResult;
 import com.junjunlei.gmall.vo.product.PmsProductCategoryParam;
-import com.junjunlei.gmall.vo.product.PmsProductCategoryWithChildrenItem;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.BindingResult;
@@ -15,14 +15,17 @@ import java.util.List;
 
 /**
  * 商品分类模块Controller
+ *
+ * @author junjun.lei
+ * @create 2020-03-19 21:32
  */
 @CrossOrigin
 @RestController
 @Api(tags = "PmsProductCategoryController", description = "商品分类管理")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {
-    @Reference
-    private ProductCategoryService productCategoryService;
+    @Reference(version = "1.0")
+    ProductCategoryService productCategoryService;
 
     @ApiOperation("添加产品分类")
     @PostMapping(value = "/create")
@@ -83,8 +86,8 @@ public class PmsProductCategoryController {
     @GetMapping(value = "/list/withChildren")
     public Object listWithChildren() {
         //TODO 查询所有一级分类及子分类,查询任意菜单以及他下面的所有子菜单
-
         //List<PmsProductCategoryWithChildrenItem> items = productCategoryService.listCatelogWithChilder(0);
-        return new CommonResult().success(null);
+        List<ProductCategoryWithChildrenVO> children=productCategoryService.getCategoryList(0L);
+        return new CommonResult().success(children);
     }
 }
