@@ -25,7 +25,8 @@
     </appender>
 
     <!--日志级别   DEBUG-INFO-WARN-ERROR  -->
-    <root level="DEBUG" >
+    <root>
+        <level>DEBUG</level>
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="LOGSTASH"/>
