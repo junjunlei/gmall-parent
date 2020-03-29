@@ -1,4 +1,4 @@
-package com.junjunlei.gmall.ums.controller.dto;
+package com.junjunlei.gmall.ums.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 

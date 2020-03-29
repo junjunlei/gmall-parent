@@ -3,7 +3,7 @@ package com.junjunlei.gmall.ums.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.junjunlei.gmall.config.SwaggerApiConfig;
-import com.junjunlei.gmall.ums.controller.dto.UmsAdminLoginDTO;
+import com.junjunlei.gmall.ums.dto.UmsAdminLoginDTO;
 import com.junjunlei.gmall.ums.entity.Admin;
 import com.junjunlei.gmall.ums.service.UmsAdminService;
 import com.junjunlei.gmall.utils.CommonException;

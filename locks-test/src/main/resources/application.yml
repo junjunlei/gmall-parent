@@ -1,0 +1,7 @@
+spring:
+  redis:
+    host: 47.93.32.124 #\u8FD9\u91CC\u628Ahost\u5199\u9519\u6210url\u62A5\u9519\u4E86
+    password: redispassword
+    database: 15
+server:
+  port: 8080

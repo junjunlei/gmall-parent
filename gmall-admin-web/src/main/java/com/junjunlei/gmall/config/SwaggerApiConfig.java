@@ -29,7 +29,14 @@ public class SwaggerApiConfig {
      * 商品管理
      */
     public static final String PMS_PRODUCT_CONTROLLER = "PmsProductController";
+    /**
+     * 商品品牌管理
+     */
     public static final String PMS_BRAND_CONTROLLER="PmsBrandController";
+    /**
+     * 会员等级管理
+     */
+    public static final String UMS_MEMBER_LEVEL_CONTROLLER="UmsMemberLevelController";
 
     @Bean
     public Docket docket() {
@@ -37,7 +44,8 @@ public class SwaggerApiConfig {
                 .apiInfo(apiInfo())
                 .tags(new Tag(UMS_ADMIN_CONTROLLER, "后台用户管理"),
                         new Tag(PMS_PRODUCT_CONTROLLER ,"商品管理"),
-                        new Tag(PMS_BRAND_CONTROLLER ,"商品品牌管理"))
+                        new Tag(PMS_BRAND_CONTROLLER ,"商品品牌管理"),
+                        new Tag(UMS_MEMBER_LEVEL_CONTROLLER ,"会员等级管理"))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.junjunlei.gmall"))
                 .paths(PathSelectors.any())
