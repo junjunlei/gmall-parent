@@ -19,4 +19,9 @@ public class LockController {
         lockService.incr();
         return "ok";
     }
+    @GetMapping("/incr2")
+    public String incr2() {
+        lockService.distributeIncr();
+        return "ok";
+    }
 }
