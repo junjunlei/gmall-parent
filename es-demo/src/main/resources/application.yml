@@ -1,0 +1,6 @@
+spring:
+  elasticsearch:
+    jest:
+      uris: http://192.168.160.100:9200,http://192.168.160.100:9201
+      read-timeout: 20000
+      connection-timeout: 20000
